@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auraaq – Coming Soon</title>
+
+    <!-- TailwindCSS CDN (no build step required) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Retro-grid background helper styles -->
+    <style>
+      /* Grid animation */
+      @keyframes moveGrid {
+        from {
+          background-position: 0 0, 0 0;
+        }
+        to {
+          background-position: 40px 40px, 40px 40px;
+        }
+      }
+      .retro-grid {
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        perspective: 200px;
+      }
+      .retro-grid .grid-lines {
+        position: absolute;
+        inset: 0;
+        transform: rotateX(65deg);
+        background-image: linear-gradient(to right, rgba(99, 102, 241, 0.6) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(99, 102, 241, 0.6) 1px, transparent 1px);
+        background-size: 40px 40px;
+        height: 300vh;
+        width: 600vw;
+        margin-left: -200%;
+        transform-origin: 100% 0 0;
+        animation: moveGrid 45s linear infinite;
+      }
+      .retro-grid .fade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, white, transparent 90%);
+      }
+      @media (prefers-color-scheme: dark) {
+        .retro-grid .grid-lines {
+          background-image: linear-gradient(to right, rgba(79, 70, 229, 0.6) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(79, 70, 229, 0.6) 1px, transparent 1px);
+        }
+        .retro-grid .fade {
+          background: linear-gradient(to top, black, transparent 90%);
+        }
+      }
+    </style>
+  </head>
+  <body class="flex flex-col min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+    <div class="relative min-h-screen isolate">
+      <!-- Purple glow background -->
+      <div class="absolute inset-0 z-0 h-full w-full bg-purple-950/10 dark:bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.15),transparent)] dark:bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),transparent)]"></div>
+
+      <!---------------- Retro Grid ---------------->
+      <div class="retro-grid">
+        <div class="grid-lines"></div>
+        <div class="fade"></div>
+      </div>
+
+      <!---------------- Content ---------------->
+      <section class="relative z-10 flex items-center justify-center min-h-screen px-4 py-28">
+        <div class="space-y-8 text-center max-w-4xl mx-auto">
+          <!-- Logo -->
+          <div class="flex justify-center mb-8">
+            <!-- NOTE: Place aureaq-logo.png in an `icons` sub-folder next to this HTML file -->
+            <img src="icons/auraaq-logo.png" alt="Auraaq Logo" width="120" height="120" class="object-contain" />
+          </div>
+
+          <!-- Coming Soon Badge -->
+          <h1 class="text-sm text-gray-600 dark:text-gray-400 group font-sans mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/20 via-gray-400/20 to-transparent dark:from-zinc-300/5 dark:via-gray-400/5 border-[2px] border-black/5 dark:border-white/5 rounded-3xl w-fit">
+            Open&nbsp;Beta&nbsp;Coming&nbsp;Soon
+            <svg class="inline w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </h1>
+
+          <!-- Main Heading -->
+          <!-- Main Heading -->
+          <h2 class="text-4xl md:text-6xl tracking-tighter leading-snug font-extrabold bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0)_202%)]">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-orange-200">Auraaq</span>, your personal AI tutor
+          </h2>
+
+          <!-- Subtitle -->
+          <h3 class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium">for Cambridge preparations</h3>
+
+          <!-- Description -->
+          <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+            Get ready to revolutionize your exam preparation with personalized AI tutoring, practice questions, and expert guidance tailored specifically for Cambridge IGCSE and A-Level subjects.
+          </p>
+
+          <!-- Feature cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto">
+            <div class="p-6 rounded-lg bg-gradient-to-tr from-zinc-300/10 via-purple-400/10 to-transparent dark:from-zinc-300/5 dark:via-purple-400/10 border border-gray-200 dark:border-gray-700">
+              <div class="text-2xl mb-3">🎯</div>
+              <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Personalized Learning</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">AI-powered study plans tailored to your learning style and exam goals</p>
+            </div>
+            <div class="p-6 rounded-lg bg-gradient-to-tr from-zinc-300/10 via-purple-400/10 to-transparent dark:from-zinc-300/5 dark:via-purple-400/10 border border-gray-200 dark:border-gray-700">
+              <div class="text-2xl mb-3">📚</div>
+              <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Cambridge Focused</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">Specialized content for IGCSE and A-Level Cambridge curriculum</p>
+            </div>
+            <div class="p-6 rounded-lg bg-gradient-to-tr from-zinc-300/10 via-purple-400/10 to-transparent dark:from-zinc-300/5 dark:via-purple-400/10 border border-gray-200 dark:border-gray-700">
+              <div class="text-2xl mb-3">🤖</div>
+              <h4 class="font-semibold text-gray-900 dark:text-white mb-2">AI Tutoring</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">24/7 intelligent tutoring support with instant feedback and explanations</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
